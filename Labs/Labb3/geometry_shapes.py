@@ -1,3 +1,4 @@
+import math
 class Geometry_common:
   def __init__(self,x,y):
     #Positioner i Koordinatsystem
@@ -41,9 +42,20 @@ class Circle(Geometry_common):
     circumfrance = 3.14 * 2 * self.radius
     print(f"Circumfrance = {circumfrance}")
     return circumfrance
+  
   def is_unit_circle(self):
     return self.radius == 1
   
+  def is_inside(self,input_x,input_y):
+    return math.dist([self.get_x(),self.get_y()],[input_x,input_y]) < self.radius
+  #Magic Method
+  def __eq__(self, other):
+    try:
+      return self.radius == other.radius
+    except Exception:
+      print("You tried to compare an object without the .radius property")
+      return False
+
 ##################
 class Rectangle(Geometry_common):
   def __init__(self, x, y, side1, side2):
@@ -69,8 +81,7 @@ class Rectangle(Geometry_common):
     return self.side1 == self.side2
     
   def __str__(self) -> str:
-    
-    pass
+    return 'Rektangle class'
   def __repr__(self) -> str:
     
     pass
