@@ -3,7 +3,7 @@ from geometry_shapes import *
 
 undefined_shape = Geometry_common(x=0,y=0)
 
-cirkel1 = Circle(x=0,y=0, radius=2) # enhetscirkel
+cirkel1 = Circle(x=0,y=0, radius=1) # enhetscirkel
 cirkel2 = Circle(x=0,y=0, radius=1)
 rektangel = Rectangle(x=0,y=0,side1=1, side2=1)
 
